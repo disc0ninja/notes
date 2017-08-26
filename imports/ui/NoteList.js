@@ -5,15 +5,19 @@ import {createContainer} from 'meteor/react-meteor-data';
 
 // component imports
 import NoteListHeader from './NoteListHeader';
+import NoteListItem from './NoteListItem';
 
 // api imports
 import {Notes} from '../api/notes';
 
 export const NoteList = (props) => {
-  return(
+  return (
     <div>
+      <NoteListHeader/>
+      {props.notes.map((note) => {
+        return <NoteListItem key={note._id} note={note}/>;
+      })}
       NoteList {props.notes.length}
-      <NoteListHeader />
     </div>
   );
 };
@@ -25,7 +29,5 @@ NoteList.propTypes = {
 export default createContainer(() => {
   Meteor.subscribe('notes');
 
-  return {
-      notes: Notes.find().fetch()
-  }
+  return {notes: Notes.find().fetch()}
 }, NoteList);
