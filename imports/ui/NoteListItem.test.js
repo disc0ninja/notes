@@ -24,7 +24,7 @@ if (Meteor.isClient) {
     });
 
     it('should set default title if no title set', function() {
-      const wrapper = mount(<NoteListItem note={notes[1].title} Session={Session}/>);
+      const wrapper = mount(<NoteListItem note={notes[1]} Session={Session}/>);
       expect(wrapper.find('h5').text()).toBe('Untitled note');
     });
 
