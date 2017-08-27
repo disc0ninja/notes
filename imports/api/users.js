@@ -1,6 +1,6 @@
-import { Meteor } from 'meteor/meteor';
+import {Meteor} from 'meteor/meteor';
 import SimpleSchema from 'simpl-schema';
-import { Accounts } from 'meteor/accounts-base';
+import {Accounts} from 'meteor/accounts-base';
 
 export const validateNewUser = (user) => {
   const email = user.emails[0].address;
@@ -10,7 +10,7 @@ export const validateNewUser = (user) => {
       type: String,
       regEx: SimpleSchema.RegEx.Email
     }
-  }).validate({ email });
+  }).validate({email});
   return true;
 }
 

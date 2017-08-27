@@ -1,7 +1,7 @@
-import { Meteor } from 'meteor/meteor';
+import {Meteor} from 'meteor/meteor';
 import expect from 'expect';
 
-import { validateNewUser } from './users';
+import {validateNewUser} from './users';
 if (Meteor.isServer) {
   describe('users', function() {
 
@@ -18,7 +18,7 @@ if (Meteor.isServer) {
       expect(res).toBe(true);
     });
 
-    it('should reject invalid email', function () {
+    it('should reject invalid email', function() {
       const testUser = {
         emails: [
           {

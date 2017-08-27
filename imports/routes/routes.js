@@ -1,6 +1,6 @@
-import { Meteor } from 'meteor/meteor';
+import {Meteor} from 'meteor/meteor';
 import React from 'react';
-import { Router, Route, browserHistory } from 'react-router';
+import {Router, Route, browserHistory} from 'react-router';
 
 // Component Imports
 import Signup from '../ui/Signup';
@@ -29,7 +29,7 @@ export const onAuthChange = (isAuthenticated) => {
   // If on an unauthenticated page and logged in, redirect to /links
   if (isAuthenticated && isUnauthenticatedPage) {
     browserHistory.replace('/dashboard');
-  // If on an authenticated page and not logged in, redirect to /
+    // If on an authenticated page and not logged in, redirect to /
   } else if (!isAuthenticated && isAuthenticatedPage) {
     browserHistory.replace('/');
   }
