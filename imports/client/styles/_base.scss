@@ -8,6 +8,8 @@ html {
 }
 
 body {
+  background: $body-bg-color;
+  color: $body-default-color;
   font-family: Helvetica, Arial, sans-serif;
   font-size: $base-font-size;
 }
@@ -27,10 +29,12 @@ p {
 }
 
 a {
-  color: #000000;
+  color: $body-default-color;
 }
 
-input[type=text], input[type=email], input[type=password] {
+input[type=email],
+input[type=password],
+input[type=text] {
   border: 2px solid $input-border;
   font-size: $base-font-size;
   margin-bottom: $space;
