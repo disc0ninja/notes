@@ -8,11 +8,13 @@ import {Notes} from '../api/notes';
 
 export const NoteListHeader = (props) => {
   return (
-    <button onClick={() => props.meteorCall('notes.insert', (err, res) => {
-      if (res) {
-        props.Session.set('selectedNoteId', res);
-      }
-    })}>Create Note</button>
+    <div className="item-list__header">
+      <button className="button" onClick={() => props.meteorCall('notes.insert', (err, res) => {
+        if (res) {
+          props.Session.set('selectedNoteId', res);
+        }
+      })}>Create Note</button>
+    </div>
   );
 };
 

@@ -19,7 +19,6 @@ export const NoteList = (props) => {
       {props.notes.length === 0
         ? <NoteListEmptyItem/>
         : undefined}
-      NoteList {props.notes.length}
     </div>
   );
 };
